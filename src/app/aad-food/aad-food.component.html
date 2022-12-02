@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+    <h2>Ajouter food :</h2>
+    </div>
+    <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID food</label>
+    <input type="text" [(ngModel)]="newfood.idFood" name="idFood" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom food</label>
+    <input type="text"[(ngModel)]= "newfood.nomFood"
+    name="nomFood" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix food</label>
+    <input type="number" [(ngModel)]= "newfood.prixFood" name="prixFood" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date de préparation</label>
+    <input type="date" [(ngModel)]= "newfood.datePreparation" name="datePreparation" class="form-control">
+    </div>
+     <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Choix</label>
+        <select class="form-control form-control-lg" id="idChoix" name="idChoix"
+        [(ngModel)]="newIdChoix">
+        <option *ngFor="let choix of choix" [value]="choix.idChoix" >
+        {{choix.nomChoix}}
+        </option>
+        </select>
+        </div> 
+    <div class="mt-2">
+    <button type="submit" (click)="addFood()" class="btn btn-success">Ajouter</button>
+    </div>
+    </form>
+    </div>
